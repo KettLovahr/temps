@@ -10,6 +10,8 @@ namespace temps
         [UI] private Button _button1 = null;
         */
         [UI] private Box _mainBox = null;
+        [UI] private Box _celsiusBox = null;
+        [UI] private Box _fahrenheitBox = null;
 
         private Scale _celsiusScale;
         private Scale _fahrenheitScale;
@@ -25,13 +27,13 @@ namespace temps
             DeleteEvent += Window_DeleteEvent;
 
             _celsiusScale = new Scale(Orientation.Horizontal, -100, 100, 1);
-            _mainBox.Add(_celsiusScale);
+            _celsiusBox.Add(_celsiusScale);
             _celsiusScale.Show();
             _celsiusScale.ChangeValue += CelsiusScale_ChangeValueEvent;
             _celsiusScale.Expand = true;
 
             _fahrenheitScale = new Scale(Orientation.Horizontal, -148, 212, 1);
-            _mainBox.Add(_fahrenheitScale);
+            _fahrenheitBox.Add(_fahrenheitScale);
             _fahrenheitScale.Show();
             _fahrenheitScale.ChangeValue += FahrenheitScale_ChangeValueEvent;
             _fahrenheitScale.Expand = true;
