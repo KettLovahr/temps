@@ -6,9 +6,6 @@ namespace temps
 {
     class MainWindow : Window
     {
-        /* Don't forget to create an object for widgets like this:
-        [UI] private Button _button1 = null;
-        */
         [UI] private Box _mainBox = null;
         [UI] private Box _celsiusBox = null;
         [UI] private Box _fahrenheitBox = null;
