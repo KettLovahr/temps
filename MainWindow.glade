@@ -2,6 +2,19 @@
 <!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.18"/>
+  <object class="GtkAdjustment" id="_celsiusAdjust">
+    <property name="lower">-40</property>
+    <property name="upper">100</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+  <object class="GtkAdjustment" id="_fahrenheitAdjust">
+    <property name="lower">-40</property>
+    <property name="upper">212</property>
+    <property name="value">32</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
   <object class="GtkWindow" id="MainWindow">
     <property name="can-focus">False</property>
     <property name="title" translatable="yes">Temperatures</property>
@@ -30,7 +43,21 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkScale" id="_celsiusScale">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="adjustment">_celsiusAdjust</property>
+                <property name="lower-stepper-sensitivity">on</property>
+                <property name="upper-stepper-sensitivity">on</property>
+                <property name="round-digits">1</property>
+                <property name="draw-value">False</property>
+                <property name="value-pos">right</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -57,7 +84,21 @@
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkScale" id="_fahrenheitScale">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="adjustment">_fahrenheitAdjust</property>
+                <property name="lower-stepper-sensitivity">on</property>
+                <property name="upper-stepper-sensitivity">on</property>
+                <property name="round-digits">1</property>
+                <property name="draw-value">False</property>
+                <property name="value-pos">right</property>
+              </object>
+              <packing>
+                <property name="expand">True</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -67,7 +108,17 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
+          <object class="GtkButton" id="_closeButton">
+            <property name="label" translatable="yes">Close</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
         </child>
       </object>
     </child>
